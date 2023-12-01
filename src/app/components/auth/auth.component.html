@@ -1,0 +1,33 @@
+<section
+    class="rounded-r-2xl flex flex-col h-full w-full shadow-2xl shadow-yellow-900 bg-yellow-950 p-10 gap-2 relative">
+    <form class="w-full h-max bg-amber-200 rounded-xl flex flex-col p-4 justify-between gap-3 border-dashed border-2 border-black" [formGroup]="formGroup">
+        <div class="flex flex-row-reverse align-middle items-center font-serif justify-between">
+            <input id="login-name" type="text"
+            class="px-2 py-1 border-stone-700 border-b bg-transparent focus-visible:outline-none"
+            formControlName="name" />
+            
+            <label for="login-name">Name *: </label>
+        </div>
+
+        <div class="flex flex-row-reverse align-middle items-center font-serif justify-between">
+            <input id="login-password" type="password"
+            class="px-2 py-1 border-stone-700 border-b bg-transparent focus-visible:outline-none"
+            formControlName="password" />
+
+            <label for="login-password">Pass *: </label>
+        </div>
+
+        <button type="submit" (click)="login()"
+            class="font-serif px-2 py-1 rounded border border-yellow-950 text-yellow-950 hover:bg-yellow-950 hover:text-amber-400">
+            Open
+        </button>
+    </form>
+
+    <button
+        class="font-serif px-2 py-1 rounded border border-transparent text-stone-400 hover:text-amber-400 hover:underline">
+        Not a book? Get it!
+    </button>
+
+
+    <alert></alert>
+</section>
