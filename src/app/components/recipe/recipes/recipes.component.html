@@ -1,1 +1,21 @@
-<p>recipes works!</p>
+<section class="h-full flex flex-col gap-3">
+    <!-- Search -->
+    <div>Search</div>
+
+    <!-- List -->
+    <div class="flex-1">
+        <ul *ngIf="recipes.length > 0; else noRecipe">
+            <li *ngFor="let recipe of recipes; let i = index"
+                class="ml-6 hover:text-amber-400 hover:underline hover:font-bold hover:cursor-pointer"
+                (click)="openRecipe(recipe.id)">{{recipe.title}}
+            </li>
+        </ul>
+
+        <ng-template #noRecipe>
+            <p class="text-stone-700">There are no recipes in your book yet...</p>
+        </ng-template>
+    </div>
+
+    <!-- Pagination -->
+    <div class="self-center">Pagination</div>
+</section>

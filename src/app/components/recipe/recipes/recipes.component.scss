@@ -1,0 +1,16 @@
+@import '../../../styles/assets.scss';
+
+ul {
+    list-style: none;
+
+    & li {
+        &::before {
+            content: "\2022";
+            color: $gold;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    }
+}

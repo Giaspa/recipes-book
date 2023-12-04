@@ -15,6 +15,7 @@ import { RecipesComponent } from './components/recipe/recipes/recipes.component'
 import { RecipeDetailComponent } from './components/recipe/recipe-detail/recipe-detail.component';
 import { RecipeUpdateComponent } from './components/recipe/recipe-update/recipe-update.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { CustomHeaderComponent } from './components/commons/custom-header/custom-header.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     RecipesComponent,
     RecipeDetailComponent,
     RecipeUpdateComponent,
-    HomepageComponent
+    HomepageComponent,
+    CustomHeaderComponent
   ],
   imports: [
     BrowserModule,

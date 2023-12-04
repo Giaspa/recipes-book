@@ -5,6 +5,7 @@ import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-
 import { RecipeDetailComponent } from './components/recipe/recipe-detail/recipe-detail.component';
 import { RecipeUpdateComponent } from './components/recipe/recipe-update/recipe-update.component';
 import { authGuard } from './guards/auth-guard.guard';
+import { recipeResolver } from './resolvers/recipe.resolver';
 
 const routes: Routes = [
   {
@@ -18,7 +19,10 @@ const routes: Routes = [
       {
         path: ':id',
         component: RecipeDetailComponent,
-        canActivate: [authGuard]
+        canActivate: [authGuard],
+        resolve: {
+          recipe: recipeResolver
+        }
       },
       {
         path: 'update/:id',

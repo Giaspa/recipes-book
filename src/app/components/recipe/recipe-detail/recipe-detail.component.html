@@ -1,1 +1,30 @@
-<p>recipe-detail works!</p>
+<div class="flex flex-col h-full gap-5">
+    <custom-header>
+        <button [class]="goldHoveringBtn" title="Update recipe">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+
+        <span>{{recipe.title}}</span>
+
+        <button [class]="goldHoveringBtn" title="Delete recipe">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+    </custom-header>
+
+    <div class="relative">
+        <img [src]="recipe.img" [alt]="recipe.title + ' image'" class="rounded-md">
+
+        <div
+            class="absolute bottom-0 right-0 px-2 py-1 bg-stone-400 bg-opacity-80 text-amber-950 w-full flex justify-between">
+            <div>
+                <i class="fa-solid fa-users"></i>
+                {{recipe.diners}}
+            </div>
+
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                {{recipe.preparationMin}} min
+            </div>
+        </div>
+    </div>
+</div>

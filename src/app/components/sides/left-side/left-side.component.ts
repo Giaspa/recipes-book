@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { outlineButton } from 'src/app/constants/buttons';
+import { goldHoveringBtn, outlineButton } from 'src/app/constants/buttons';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,7 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LeftSideComponent {
   outlineButton = outlineButton;
-
+  goldHoveringBtn = goldHoveringBtn;
+  
   constructor(readonly authService: AuthService){
 
   }

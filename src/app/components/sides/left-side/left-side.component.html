@@ -1,13 +1,12 @@
 <div class="flex flex-col h-full gap-5">
     <!-- User -->
-    <header
-        class="text-amber-950 text-xl flex flex-row justify-between align-middle items-center gap-4 font-serif font-bold border-b-2 border-amber-950">
+    <custom-header>
         <span>{{authService.loggedUser().name}}</span>
 
-        <button class="hover:text-amber-400">
+        <button [class]="goldHoveringBtn">
             <i class="fa-solid fa-user-gear"></i>
         </button>
-    </header>
+    </custom-header>
 
     <!-- New Recipe -->
     <section>
@@ -18,5 +17,7 @@
     </section>
 
     <!-- Recipes list -->
-    <section class="flex-1">Recipes list</section>
+    <section class="flex-1">
+        <recipes></recipes>
+    </section>
 </div>
