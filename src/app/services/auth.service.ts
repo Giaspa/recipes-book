@@ -22,7 +22,11 @@ export class AuthService {
     return this.user !== null
   }
 
-  signup(){
-    
+  loggedUser(): User {
+    return this.user!;
+  }
+
+  getName(){
+    return this.user?.name.split(" ")[0]
   }
 }

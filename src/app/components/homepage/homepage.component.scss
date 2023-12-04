@@ -1,0 +1,8 @@
+@import '../../styles/assets.scss';
+
+p{
+    & span:nth-child(1)::first-letter{
+        color: $gold;
+        font-size: 2rem;
+    }
+}

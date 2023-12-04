@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertComponent } from '../alert/alert.component';
+import { outlineButton } from 'src/app/constants/buttons';
 
 @Component({
   selector: 'auth',
@@ -11,6 +12,7 @@ import { AlertComponent } from '../alert/alert.component';
 export class AuthComponent implements OnInit {
   @ViewChild(AlertComponent) alert!: AlertComponent;
   formGroup!: FormGroup
+  outlineButton = outlineButton;
 
   constructor(
     readonly authService: AuthService

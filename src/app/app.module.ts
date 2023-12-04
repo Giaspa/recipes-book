@@ -8,6 +8,13 @@ import { BookComponent } from './components/book/book.component';
 import { BookPageComponent } from './components/book/book-page/book-page.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { LeftSideComponent } from './components/sides/left-side/left-side.component';
+import { RightSideComponent } from './components/sides/right-side/right-side.component';
+import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+import { RecipesComponent } from './components/recipe/recipes/recipes.component';
+import { RecipeDetailComponent } from './components/recipe/recipe-detail/recipe-detail.component';
+import { RecipeUpdateComponent } from './components/recipe/recipe-update/recipe-update.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +22,14 @@ import { AlertComponent } from './components/alert/alert.component';
     BookComponent,
     BookPageComponent,
     AuthComponent,
-    AlertComponent
+    AlertComponent,
+    LeftSideComponent,
+    RightSideComponent,
+    RecipeCreateComponent,
+    RecipesComponent,
+    RecipeDetailComponent,
+    RecipeUpdateComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

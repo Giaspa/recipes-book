@@ -6,12 +6,13 @@
   <ng-template #userLogged>
     <book class="h-full w-1/2">
       <book-page class="h-full w-1/2" [isRight]="false">
-        <!-- TODO -->
+        <!-- TODO - LX Side -->
+        <left-side></left-side>
       </book-page>
       
       <book-page class="h-full w-1/2" [isRight]="true">
-        <!-- TODO -->
-        <alert></alert>
+        <!-- TODO - DX Side -->
+        <router-outlet></router-outlet>
       </book-page>
     </book>
   </ng-template>
