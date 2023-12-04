@@ -4,9 +4,13 @@ ul {
     list-style: none;
 
     & li {
+        &:hover {
+            letter-spacing: 1px;
+        }
+
         &::before {
             content: "\2022";
-            color: $gold;
+            color: $brown;
             font-weight: bold;
             display: inline-block;
             width: 1em;

@@ -4,7 +4,7 @@
 
     <!-- List -->
     <div class="flex-1">
-        <ul *ngIf="recipes.length > 0; else noRecipe">
+        <ul *ngIf="recipes.length > 0; else noRecipe" class="flex flex-col gap-2">
             <li *ngFor="let recipe of recipes; let i = index"
                 class="ml-6 hover:text-amber-400 hover:underline hover:font-bold hover:cursor-pointer"
                 (click)="openRecipe(recipe.id)">{{recipe.title}}
@@ -16,6 +16,6 @@
         </ng-template>
     </div>
 
-    <!-- Pagination -->
-    <div class="self-center">Pagination</div>
+    <!-- Paginator -->
+    <custom-paginator [pagination]="pagination"></custom-paginator>
 </section>

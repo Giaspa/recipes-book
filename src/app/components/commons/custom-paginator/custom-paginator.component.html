@@ -1,0 +1,29 @@
+<div class="flex flex-row justify-between">
+    <!-- Start -->
+    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="isStart()">
+        <i class="fa-solid fa-angles-left"></i>
+    </button>
+
+    <!-- Back -->
+    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="!canGoBack()">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+
+    <!-- Pages -->
+    <!-- 1 -->
+    <!-- 2 -->
+    <!-- ... -->
+    <!-- 6 -->
+    <!-- 7 -->
+    Paginator
+
+    <!-- Ahead -->
+    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="!canGoAhead()">
+        <i class="fa-solid fa-angle-right"></i>
+    </button>
+
+    <!-- End -->
+    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="isEnd()">
+        <i class="fa-solid fa-angles-right"></i>
+    </button>
+</div>

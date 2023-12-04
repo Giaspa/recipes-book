@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pagination } from 'src/app/model/pagination';
 import { Recipe } from 'src/app/model/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 
@@ -9,6 +10,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent {
+  pagination!: Pagination<Recipe>;
   recipes: Recipe[] = [];
 
   constructor(
@@ -19,9 +21,10 @@ export class RecipesComponent {
   }
 
   setRecipes() {
-    this.recipeService.getRecipes().subscribe(recipes => {
-      console.log("🚀 ~ file: recipes.component.ts:19 ~ RecipesComponent ~ this.recipeService.getRecipes ~ recipes:", recipes)
-      this.recipes = recipes;
+    this.recipeService.getRecipes().subscribe(recipesPagination => {
+      console.log("🚀 ~ file: recipes.component.ts:23 ~ RecipesComponent ~ this.recipeService.getRecipes ~ recipesPagination:", recipesPagination)
+      this.recipes = recipesPagination.content;
+      this.pagination = recipesPagination;
     })
   }
 
