@@ -21,4 +21,8 @@ export class AuthService {
   isLogged(): boolean {
     return this.user !== null
   }
+
+  signup(){
+    
+  }
 }

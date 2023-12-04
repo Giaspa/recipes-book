@@ -1,4 +1,15 @@
-<div class="absolute max-w-[235px] px-8 py-4 bg-opacity-20 bg-stone-600 border-4 rounded-xl border-red-700 bottom-6 right-3 rotate-3 text-red-700 text-xl font-serif flex flex-col align-middle items-center justify-center">
-    <strong>Ops...</strong>
-    This is a message!
+<div *ngIf="isOpen"
+    class="absolute max-w-[235px] px-8 py-4 bg-opacity-20 bg-stone-600 border-4 rounded-xl bottom-6 right-3 rotate-3 font-serif flex flex-col align-middle items-center justify-center gap-2"
+    [ngClass]="typeAlertClass()" (click)="isOpen = false">
+    <span class="text-xl flex justify-between w-full items-center">
+        <div class="flex gap-2 items-center">
+            <i class="fa-regular" [ngClass]="alertType === 'success' ? 'fa-thumbs-up' : 'fa-face-frown'"></i>
+            
+            <strong>{{title}}</strong>
+        </div>
+
+        <span *ngIf="isAutoClosing" class="text-sm">{{timer}}</span>
+    </span>
+
+    <span class="text-sm">{{message}}</span>
 </div>
