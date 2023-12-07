@@ -1,0 +1,22 @@
+<div class="w-full flex justify-center">
+    <button [class]="'text-amber-950 h-[30px]'+ goldHoveringBtn" [class.text-amber-400]="actived" (click)="open()">
+        <ng-content select="[title]"></ng-content>
+    </button>
+</div>
+
+<section *ngIf="actived" class="absolute top-0 left-0 h-full w-full bg-stone-700 bg-opacity-25" (click)="close()">
+</section>
+
+<dialog [open]="actived" class="post-it absolute h-[18rem] max-h-[18rem] bg-amber-200 p-3 z-50">
+    <div class="flex flex-col h-full">
+        <header class="w-full text-right">
+            <button class="text-stone-400 hover:text-amber-950" (click)="close()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+
+        <div class="flex-1">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</dialog>

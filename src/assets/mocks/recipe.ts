@@ -85,6 +85,50 @@ export const recipesMock: Recipe[] = [
                 quantity: "4",
             },
             {
+                name: "Beer",
+                quantity: "600 ml",
+            },
+            {
+                name: "Red onion",
+                quantity: "1",
+            },
+            {
+                name: "Garlic",
+                quantity: "1",
+            },
+            {
+                name: "Rosemary",
+                quantity: "1",
+            },
+            {
+                name: "Bay leaves",
+                quantity: "2",
+            },
+            {
+                name: "Spoons of honey",
+                quantity: "3",
+            },
+            {
+                name: "Oil",
+                quantity: "q.b.",
+            },
+            {
+                name: "Salt",
+                quantity: "q.b.",
+            },
+            {
+                name: "Pepper",
+                quantity: "q.b.",
+            },
+            {
+                name: "Chicken thighs",
+                quantity: "4",
+            },
+            {
+                name: "Beer",
+                quantity: "600 ml",
+            },
+            {
                 name: "Red onion",
                 quantity: "1",
             },

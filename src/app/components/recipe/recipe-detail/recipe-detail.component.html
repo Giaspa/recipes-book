@@ -1,4 +1,4 @@
-<div class="flex flex-col h-full gap-5">
+<div class="flex flex-col h-full gap-3">
     <custom-header>
         <button [class]="goldHoveringBtn" title="Update recipe">
             <i class="fa-solid fa-pen-to-square"></i>
@@ -11,7 +11,8 @@
         </button>
     </custom-header>
 
-    <div class="relative">
+    <!-- Image, Diners & Time -->
+    <div class="relative" *ngIf="step < 0">
         <img [src]="recipe.img" [alt]="recipe.title + ' image'" class="rounded-md">
 
         <div
@@ -26,5 +27,60 @@
                 {{recipe.preparationMin}} min
             </div>
         </div>
+    </div>
+
+    <!-- Ingerdients -->
+    <post-it-modal>
+        <span title>
+            <i class="fa-solid fa-utensils"></i> Ingredients
+        </span>
+
+        <div class="overflow-y-auto h-[15rem]">
+            <ul>
+                <li *ngFor="let ingredient of recipe.ingredients">
+                    <span class="text-sm font-serif"><strong>{{ingredient.name}}:</strong>
+                        {{ingredient.quantity}}</span>
+                </li>
+            </ul>
+        </div>
+    </post-it-modal>
+
+    <!-- Steps -->
+    <div class="relative flex-1 flex flex-col gap-2">
+        <section class="relative" *ngFor="let recipeStep of recipe.steps; let i = index">
+            <button *ngIf="step === i else closeStep"
+                class="w-full flex justify-between items-center font-serif text-sm border-b border-b-amber-950 text-amber-950"
+                (click)="hideSteps()">
+                <div class="flex gap-3 justify-between">
+                    <strong>Step {{i+1}}</strong>
+                    
+                    <span *ngIf="recipeStep.min">
+                        <i class="fa-solid fa-clock"></i> {{recipeStep.min}}
+                    </span>
+                </div>
+
+                <i class="fa-solid fa-angle-up"></i>
+            </button>
+
+            <ng-template #closeStep>
+                <button
+                    class="w-full flex justify-between items-center font-serif text-sm border-b border-b-stone-500 text-stone-500"
+                    (click)="showStep(i)">
+                    <div class="flex gap-3 justify-between">
+                        <strong>Step {{i+1}}</strong>
+                        
+                        <span *ngIf="recipeStep.min">
+                            <i class="fa-solid fa-clock"></i> {{recipeStep.min}}
+                        </span>
+                    </div>
+
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </ng-template>
+
+            <div *ngIf="step === i" class="py-2 bg-transparent text-sm font-serif min-h-[5rem] max-h-52 overflow-y-auto">
+                {{recipeStep.description}}
+            </div>
+        </section>
     </div>
 </div>

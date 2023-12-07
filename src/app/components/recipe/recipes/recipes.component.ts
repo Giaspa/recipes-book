@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 import { linkButton, outlineButton } from 'src/app/constants/buttons';
 import { inputContainer, searchInput } from 'src/app/constants/inputs';
 import { Pagination } from 'src/app/model/pagination';
-import { Recipe, RecipeFilter } from 'src/app/model/recipe.model';
+import { Recipe } from 'src/app/model/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
-import { SearchComponent } from './search/search.component';
+import { PostItModalComponent } from '../../commons/post-it-modal/post-it-modal.component';
 
 @Component({
   selector: 'recipes',
@@ -14,7 +14,7 @@ import { SearchComponent } from './search/search.component';
   styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent implements OnInit {
-  @ViewChild(SearchComponent) search: SearchComponent = new SearchComponent();
+  @ViewChild(PostItModalComponent) search: PostItModalComponent = new PostItModalComponent();
   outlineButton = outlineButton;
   linkButton = linkButton;
   searchInput = searchInput;

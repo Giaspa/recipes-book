@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { goldHoveringBtn } from 'src/app/constants/buttons';
 
 @Component({
-  selector: 'search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  selector: 'post-it-modal',
+  templateUrl: './post-it-modal.component.html',
+  styleUrls: ['./post-it-modal.component.scss']
 })
-export class SearchComponent {
+export class PostItModalComponent {
   goldHoveringBtn = goldHoveringBtn;
   protected actived: boolean = false
 

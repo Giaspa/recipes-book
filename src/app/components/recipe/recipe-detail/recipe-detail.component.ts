@@ -11,6 +11,7 @@ import { Recipe } from 'src/app/model/recipe.model';
 export class RecipeDetailComponent {
   recipe!: Recipe;
   goldHoveringBtn = goldHoveringBtn;
+  step: number = -1
   
   constructor(
     private readonly activatedRoute: ActivatedRoute
@@ -20,4 +21,11 @@ export class RecipeDetailComponent {
     })
   }
 
+  showStep(stepNumber: number){
+    this.step = stepNumber
+  }
+
+  hideSteps(){
+    this.step = -1
+  }
 }
