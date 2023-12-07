@@ -1,29 +1,14 @@
-<div class="flex flex-row justify-between">
-    <!-- Start -->
-    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="isStart()">
-        <i class="fa-solid fa-angles-left"></i>
-    </button>
+<div class="flex flex-row gap-2 justify-center">
+    <ng-container *ngFor="let page of getPageArray()">
+        <button *ngIf="!isNaN(page) else dots" [class.active]="isActivePage(page)" [disabled]="isActivePage(page)"
+            [class]="'text-amber-950 w-[30px] h-[30px]'+ goldHoveringBtn + disabledBtn" (click)="changePage(page)">
+            {{page}}
+        </button>
 
-    <!-- Back -->
-    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="!canGoBack()">
-        <i class="fa-solid fa-angle-left"></i>
-    </button>
-
-    <!-- Pages -->
-    <!-- 1 -->
-    <!-- 2 -->
-    <!-- ... -->
-    <!-- 6 -->
-    <!-- 7 -->
-    Paginator
-
-    <!-- Ahead -->
-    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="!canGoAhead()">
-        <i class="fa-solid fa-angle-right"></i>
-    </button>
-
-    <!-- End -->
-    <button [class]="'text-amber-950'+ goldHoveringBtn + disabledBtn" [disabled]="isEnd()">
-        <i class="fa-solid fa-angles-right"></i>
-    </button>
+        <ng-template #dots>
+            <button [class]="'text-amber-950 w-[30px] h-[30px]'+ goldHoveringBtn + disabledBtn" disabled>
+                ...
+            </button>
+        </ng-template>
+    </ng-container>
 </div>

@@ -1,0 +1,9 @@
+@import "../../../styles/assets.scss";
+
+button {
+    &.active {
+        color: $brown !important;
+        // transform: scale(1.2);
+        font-weight: bold;
+    }
+}

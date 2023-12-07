@@ -1,22 +1,29 @@
 import { User } from "./user.model";
 
-export interface Ingredient{
+export interface Ingredient {
     name: string;
     quantity: string;
 }
 
-export interface Step{
+export interface Step {
     description: string;
     min?: number;
 }
 
-export interface Recipe{
+export interface Recipe {
     id: string;
     chef?: User;
     title: string;
     img: string;
-    preparationMin: number; 
+    preparationMin: number;
     diners: number,
     ingredients: Ingredient[];
     steps: Step[];
+}
+
+export interface RecipeFilter {
+    title: string;
+    ingredient: string;
+    preparationMin: number;
+    diners: number;
 }

@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertComponent } from '../alert/alert.component';
-import { outlineButton } from 'src/app/constants/buttons';
+import { linkButton, outlineButton } from 'src/app/constants/buttons';
+import { loginInput } from 'src/app/constants/inputs';
 
 @Component({
   selector: 'auth',
@@ -13,6 +14,8 @@ export class AuthComponent implements OnInit {
   @ViewChild(AlertComponent) alert!: AlertComponent;
   formGroup!: FormGroup
   outlineButton = outlineButton;
+  linkButton = linkButton;
+  loginInput = loginInput;
 
   constructor(
     readonly authService: AuthService

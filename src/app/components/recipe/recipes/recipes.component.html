@@ -1,13 +1,63 @@
 <section class="h-full flex flex-col gap-3">
     <!-- Search -->
-    <div>Search</div>
+    <search>
+        <form [formGroup]="searchFormGroup" class="flex flex-col gap-2 h-full">
+            <div class="flex flex-col gap-2 flex-1">
+                <!-- Title -->
+                <div [class]="inputContainer">
+                    <input id="search-title" type="text" [class]="searchInput" formControlName="title" />
+
+                    <label for="search-title">Title: </label>
+                </div>
+
+                <!-- Ingredient -->
+                <div [class]="inputContainer">
+                    <input id="search-ingredient" type="text" [class]="searchInput" formControlName="ingredient" />
+
+                    <label for="search-ingredient">Ingredient: </label>
+                </div>
+
+                <!-- Times -->
+                <div [class]="inputContainer">
+                    <label for="search-preparation-min">min</label>
+
+                    <input id="search-preparation-min" type="number" [class]="searchInput"
+                        formControlName="preparationMin" />
+
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <!-- Diners -->
+                <div [class]="inputContainer">
+                    <label for="search-diners">diners</label>
+
+                    <input id="search-diners" type="number" [class]="searchInput" formControlName="diners" />
+
+                    <i class="fa-solid fa-users"></i>
+                </div>
+            </div>
+
+            <div class="flex flex-row justify-between">
+                <button [class]="linkButton + 'hover:text-red-600 text-stone-400'" (click)="onReset()" type="reset">
+                    Cancel <i class="fa-solid fa-trash"></i>
+                </button>
+
+                <button [class]="linkButton + 'hover:text-amber-950 text-stone-400'" type="submit" (click)="onSearch()">
+                    Search <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </form>
+    </search>
 
     <!-- List -->
     <div class="flex-1">
-        <ul *ngIf="recipes.length > 0; else noRecipe" class="flex flex-col gap-2">
-            <li *ngFor="let recipe of recipes; let i = index"
-                class="ml-6 hover:text-amber-400 hover:underline hover:font-bold hover:cursor-pointer"
-                (click)="openRecipe(recipe.id)">{{recipe.title}}
+        <ul *ngIf="recipes.length > 0; else noRecipe" class="flex flex-col">
+            <li *ngFor="let recipe of recipes; let i = index" class="ml-6">
+                <button [class]="linkButton + 'hover:text-amber-400 text-amber-950'" (click)="openRecipe(recipe.id)"
+                    [class.text-amber-400]="recipeService.getSelectedRecipe() === recipe.id"
+                    [disabled]="recipeService.getSelectedRecipe() === recipe.id">
+                    <span class="truncate block max-w-[18rem]">{{recipe.title}}</span>
+                </button>
             </li>
         </ul>
 
@@ -16,6 +66,14 @@
         </ng-template>
     </div>
 
+    <!-- New Recipe -->
+    <section class="w-full flex justify-center">
+        <button routerLink="/recipe/new" [class]="outlineButton">
+            <i class="fa-regular fa-plus"></i>
+            Add a recipe
+        </button>
+    </section>
+
     <!-- Paginator -->
-    <custom-paginator [pagination]="pagination"></custom-paginator>
+    <custom-paginator [pagination]="pagination" (changePageEmitter)="setRecipes($event)"></custom-paginator>
 </section>

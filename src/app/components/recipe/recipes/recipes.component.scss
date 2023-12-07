@@ -1,20 +1,14 @@
 @import '../../../styles/assets.scss';
 
 ul {
-    list-style: none;
+    list-style: disc;
 
     & li {
-        &:hover {
-            letter-spacing: 1px;
-        }
-
-        &::before {
-            content: "\2022";
-            color: $brown;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+        & button {
+            &:not(:disabled):hover {
+                transform: translateX(5px);
+                text-decoration: underline;
+            }
         }
     }
 }

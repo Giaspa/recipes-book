@@ -17,6 +17,7 @@ import { RecipeUpdateComponent } from './components/recipe/recipe-update/recipe-
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { CustomHeaderComponent } from './components/commons/custom-header/custom-header.component';
 import { CustomPaginatorComponent } from './components/commons/custom-paginator/custom-paginator.component';
+import { SearchComponent } from './components/recipe/recipes/search/search.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CustomPaginatorComponent } from './components/commons/custom-paginator/
     RecipeUpdateComponent,
     HomepageComponent,
     CustomHeaderComponent,
-    CustomPaginatorComponent
+    CustomPaginatorComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

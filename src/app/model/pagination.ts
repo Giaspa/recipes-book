@@ -25,7 +25,7 @@ export class NewPagination<T> extends EmptyPagination<T>{
         this.content = content.slice(START_ELEM, END_ELEM || content.length);
         this.currentPage = page;
         this.totalItems = content.length;
-        this.totalPages = Math.round(content.length / ITEMS_PER_PAGE);
+        this.totalPages = Math.ceil(content.length / ITEMS_PER_PAGE);
         this.itemPerPage = ITEMS_PER_PAGE
     }
 }
